@@ -57,10 +57,11 @@ for (let i = 0; i < 5; i++) {
 }
 // create space background
 const spaceTexture = new THREE.TextureLoader().load("space.jpg");
+spaceTexture.wrapS = THREE.RepeatWrapping;
 scene.background = spaceTexture;
 // space background on sphere
-const geo = new THREE.SphereBufferGeometry(500, 128, 128);
-const myTexture = new THREE.TextureLoader().load("space2.jpg");
+const geo = new THREE.BoxGeometry(500, 500, 500);
+const myTexture = new THREE.TextureLoader().load("space3.jpg");
 const mat = new THREE.MeshStandardMaterial({
   map: myTexture,
   overdraw: 1,
